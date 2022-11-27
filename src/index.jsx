@@ -3,18 +3,26 @@ import ReactDOM from 'react-dom';
 
 import './style.css';
 
+const sum = (number1, number2) => {
+  if (number1 && number2) {
+    return Number(number1) + Number(number2);
+  }
+
+  return 0;
+}
+
 function App() {
   const [number1, setNumber1] = React.useState();
   const [number2, setNumber2] = React.useState();
 
   return (
     <div>
-      <input />
+      <input value={number1} onChange={e => setNumber1(e.target.value)} />
       <span>+</span>
-      <input />
+      <input value={number2} onChange={e => setNumber2(e.target.value)} />
 
       <span>=</span>
-      <span></span>
+      <span>{ sum(number1, number2) }</span>
     </div>
   );
 }
