@@ -9,12 +9,12 @@ function App() {
 
   return (
     <div>
-      <input />
+      <input value={number1} onChange={event => setNumber1(event.target.value)} />
       <span>+</span>
-      <input />
+      <input value={number2} onChange={event => setNumber2(event.target.value)} />
 
       <span>=</span>
-      <span></span>
+      <span>{Number(number1) + Number(number2)}</span>
     </div>
   );
 }
